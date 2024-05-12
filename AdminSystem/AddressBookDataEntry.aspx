@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StockViewer.aspx.cs" Inherits="_1Viewer" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StockDataEntry.aspx.cs" Inherits="_1_DataEntry" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +7,7 @@
     <title></title>
 </head>
 <body>
+    This is the Stock Data entry form
     <form id="form1" runat="server">
         <div>
         </div>
