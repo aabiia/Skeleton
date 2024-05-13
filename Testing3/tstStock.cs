@@ -10,7 +10,7 @@ namespace Testing3
         [TestMethod]
         public void InstanceOK()
         {
-            clsStock AnStock = new clsStock();
+            clsStock  AnStock = new clsStock();
 
             Assert.IsNotNull( AnStock );
         }
