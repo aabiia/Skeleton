@@ -28,7 +28,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Product.Prod_Description = txtProd_Description.Text;
 
         //Capture the Prod_Price.
-        Product.Prod_Price = (float)Convert.ToDouble(txtProd_Price.Text);
+        Product.Prod_Price = (int)(float)Convert.ToDouble(txtProd_Price.Text);
 
         //Capture the Prod_Quantity.
         Product.Prod_Quantity = Convert.ToInt32(txtProd_Quantity.Text);
