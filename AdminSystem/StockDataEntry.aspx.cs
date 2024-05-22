@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,27 +23,84 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Product.Product_ID = Convert.ToInt32(txtProduct_ID.Text);
 
         //Capture the Product_Name.
-        Product.Product_Name = txtProduct_Name.Text;
+        string Product_Name = txtProduct_Name.Text;
 
         //Capture the Prod_Description.
-        Product.Prod_Description = txtProd_Description.Text;
+        string Prod_Description = txtProd_Description.Text;
 
         //Capture the Prod_Price.
-        Product.Prod_Price = (int)(float)Convert.ToDouble(txtProd_Price.Text);
+        string Prod_Price = txtProd_Price.Text;
 
         //Capture the Prod_Quantity.
-        Product.Prod_Quantity = Convert.ToInt32(txtProd_Quantity.Text);
+        string Prod_Quantity = txtProd_Quantity.Text;
 
         //Capture the Date_Added.
-        Product.Date_Added = Convert.ToDateTime(DateTime.Now);
+        string Date_Added = txtDate_Added.Text;
 
         //Capture the Supplier_ID.
-        Product.Supplier_ID = Convert.ToInt32(txtSupplier_ID.Text);
+        string Supplier_ID = txtSupplier_ID.Text;
 
+        //Variable to store any Error message.
+        string Error = "";
+        // Validate the data.
+        Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
+        if (Error == "")
+        {
 
-        Session["Product"] = Product;
-        
-        //Nevigate to the view page
-        Response.Redirect("StockViewer.aspx");
+            //Capture the Product_Name.
+            Product.Product_Name = Product_Name;
+            //Capture the Product_Name.
+            Product.Prod_Description = Prod_Description;
+            //Capture the Product_Name.
+            float Price;
+            if (float.TryParse(Prod_Price, out Price))
+            {
+                Product.Prod_Price = (int)Price;
+            }
+            else
+            {
+                lblError.Text = "Invalid price format.";
+                return;
+            }
+            //Capture the Product_Name.
+            // Convert and capture the Prod_Quantity.
+            int quantity;
+            if (int.TryParse(Prod_Quantity, out quantity))
+            {
+                Product.Prod_Quantity = quantity;
+            }
+            else
+            {
+                lblError.Text = "Invalid quantity format.";
+                return;
+            }
+            //Capture the Product_Name.
+            Product.Date_Added = Convert.ToDateTime(Date_Added);
+            //Capture the Product_Name.
+            int Supplier_Id;
+            if (int.TryParse(Supplier_ID, out Supplier_Id))
+            {
+                Product.Supplier_ID = Supplier_Id;
+            }
+            else
+            {
+                lblError.Text = "Invalid supplier ID format.";
+                return;
+            }
+            // Store the Product in the SessionObject.
+            Session["Product"] = Product;
+            //Nevigate to the view page
+            Response.Redirect("StockViewer.aspx");
+
+        }
+
+        else
+        {
+            //Display the Error Message.
+            lblError.Text = Error;
+
+        }
+
     }
+
 }

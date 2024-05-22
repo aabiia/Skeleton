@@ -323,7 +323,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Product_Name = ""; //this should fail.
+            string Product_Name = ""; //this should fail.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -335,7 +335,7 @@ namespace Testing3
         {
             clsStock Product = new clsStock();
             String Error = "";
-            String Product_Name = "a"; // this should be okay
+            string Product_Name = "a"; // this should be okay
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             Assert.AreEqual(Error, "");
         }
@@ -345,7 +345,7 @@ namespace Testing3
         {
             clsStock Product = new clsStock();
             String Error = "";
-            String Product_Name = "aa"; // this should be okay
+            string Product_Name = "aa"; // this should be okay
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             Assert.AreEqual(Error, "");
         }
@@ -355,7 +355,7 @@ namespace Testing3
         {
             clsStock Product = new clsStock();
             String Error = "";
-            String Product_Name = "";
+            string Product_Name = "";
             Product_Name = Product_Name.PadRight(49, 'a'); // this should be okay
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             Assert.AreEqual(Error, "");
@@ -366,7 +366,7 @@ namespace Testing3
         {
             clsStock Product = new clsStock();
             String Error = "";
-            String Product_Name = "";
+            string Product_Name = "";
             Product_Name = Product_Name.PadRight(50, 'a'); // this should be okay
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             Assert.AreEqual(Error, "");
@@ -377,7 +377,7 @@ namespace Testing3
         {
             clsStock Product = new clsStock();
             String Error = "";
-            String Product_Name = "";
+            string Product_Name = "";
             Product_Name = Product_Name.PadRight(51, 'a'); // this should fail
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             Assert.AreNotEqual(Error, "");
@@ -388,7 +388,7 @@ namespace Testing3
         {
             clsStock Product = new clsStock();
             String Error = "";
-            String Product_Name = "";
+            string Product_Name = "";
             Product_Name = Product_Name.PadRight(500, 'a'); // this should fail
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             Assert.AreNotEqual(Error, "");
@@ -404,7 +404,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Description = ""; //this should fail.
+            string Prod_Description = ""; //this should fail.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -419,7 +419,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Description = "a"; //this should pass.
+            string Prod_Description = "a"; //this should pass.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -434,7 +434,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Description = "aa"; //this should be pass.
+            string Prod_Description = "aa"; //this should be pass.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -449,7 +449,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Description = ""; //this should pass
+            string Prod_Description = ""; //this should pass
             Prod_Description = Prod_Description.PadRight(999, 'a');
             //invoke the method.
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -465,7 +465,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Description = ""; //this should pass.
+            string Prod_Description = ""; //this should pass.
             Prod_Description = Prod_Description.PadRight(1000, 'a');
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -481,7 +481,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Description = ""; //this should pass.
+            string Prod_Description = ""; //this should pass.
             Prod_Description = Prod_Description.PadRight(500, 'a');
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -497,7 +497,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Description = ""; //this should fail.
+            string Prod_Description = ""; //this should fail.
             Prod_Description = Prod_Description.PadRight(1001, 'a');
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -513,7 +513,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Description = ""; //this should fail.
+            string Prod_Description = ""; //this should fail.
             Prod_Description = Prod_Description.PadRight(5000, 'a');
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -534,7 +534,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Price = "-1"; //this should fail.
+            string Prod_Price = "-1"; //this should fail.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -549,7 +549,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Price = "0"; //this should pass.
+            string Prod_Price = "0"; //this should pass.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -564,7 +564,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Price = "1"; //this should be pass.
+            string Prod_Price = "1"; //this should be pass.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -578,8 +578,8 @@ namespace Testing3
             clsStock Product = new clsStock();
             //string variable to store any error message
             String Error = "";
-            //create some test data to pass to the method
-            String Prod_Price = "52"; //this should pass
+            // create some test data to pass to the method
+            string Prod_Price = "52"; //this should pass
             //invoke the method.
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -594,7 +594,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Price = "53"; //this should pass.
+            string Prod_Price = "53"; //this should pass.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -609,7 +609,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Price = "26.5"; //this should pass.
+            string Prod_Price = "26.5"; //this should pass.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -624,7 +624,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Price = "54"; //this should fail.
+            string Prod_Price = "54"; //this should fail.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -639,7 +639,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Price = "1000"; //this should fail.
+            string Prod_Price = "1000"; //this should fail.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -660,7 +660,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Quantity = ""; //this should fail.
+            string Prod_Quantity = ""; //this should fail.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -675,7 +675,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Quantity = "a"; //this should pass.
+            string Prod_Quantity = "a"; //this should pass.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -690,7 +690,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Quantity = "aa"; //this should be pass.
+            string Prod_Quantity = "aa"; //this should be pass.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -705,7 +705,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Quantity = ""; //this should pass
+            string Prod_Quantity = ""; //this should pass
             Prod_Quantity = Prod_Quantity.PadRight(49, 'a');
             //invoke the method.
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -721,7 +721,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Quantity = ""; //this should pass.
+            string Prod_Quantity = ""; //this should pass.
             Prod_Quantity = Prod_Quantity.PadRight(50, 'a');
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -737,7 +737,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Quantity = ""; //this should pass.
+            string Prod_Quantity = ""; //this should pass.
             Prod_Quantity = Prod_Quantity.PadRight(25, 'a');
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -753,7 +753,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Quantity = ""; //this should fail.
+            string Prod_Quantity = ""; //this should fail.
             Prod_Quantity = Prod_Quantity.PadRight(51, 'a');
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -769,7 +769,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            String Prod_Quantity = ""; //this should fail.
+            string Prod_Quantity = ""; //this should fail.
             Prod_Quantity = Prod_Quantity.PadRight(500, 'a');
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
@@ -792,7 +792,7 @@ namespace Testing3
             //set the date totodays date
             TestDate = DateTime.Now.Date;
             //convert the date variable to a string variable
-            String Date_Added = TestDate.ToString();
+            string Date_Added = TestDate.ToString();
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -814,7 +814,7 @@ namespace Testing3
             //change the date to whatever the date is less 100 years
             TestDate = TestDate.AddYears(-100);
             //convert the date variable to a string variable
-            String Date_Added = TestDate.ToString();
+            string Date_Added = TestDate.ToString();
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -835,7 +835,7 @@ namespace Testing3
             //change the date to whatever the date is less 1 day
             TestDate = TestDate.AddDays(-1);
             //convert the date variable to a string variable
-            String Date_Added = TestDate.ToString();
+            string Date_Added = TestDate.ToString();
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -857,7 +857,7 @@ namespace Testing3
             //change the date to whatever the date is plus 1 day
             TestDate = TestDate.AddDays(1);
             //convert the date variable to a string variable
-            String Date_Added = TestDate.ToString();
+            string Date_Added = TestDate.ToString();
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
@@ -878,7 +878,7 @@ namespace Testing3
             // Change the date to 100 years in the future
             TestDate = TestDate.AddYears(100);
             // Convert the date variable to a string variable
-            String Date_Added = TestDate.ToString();
+            string Date_Added = TestDate.ToString();
             // Invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             // Test to see that the result is correct
