@@ -128,7 +128,7 @@ namespace ClassLibrary
             }
         }
 
-        public bool Find(int product_ID)
+        public bool Find(int Product_ID)
         {
             //Set the private data member to thr test data value.
             mProduct_ID = 3;
@@ -136,12 +136,118 @@ namespace ClassLibrary
             mProd_Description = "Test Description";
             mProd_Price = 10;
             mProd_Quantity = 12;
-            mDate_Added = Convert.ToDateTime("23/12/2022");
+            mDate_Added = Convert.ToDateTime("19/05/2024");
             mSupplier_ID = 1;
 
 
             //Always return True.
             return true;
+        }
+
+        public string Valid(string Product_Name, string Prod_Description, string Prod_Price, string Prod_Quantity, string Date_Added)
+        {
+
+ 
+            string Error = "";
+
+            // Validate Product_Name
+            if (Product_Name.Length == 0)
+            {
+                Error = Error + "The Product_Name may not be blank : ";
+            }
+            if (Product_Name.Length > 50)
+            {
+                Error = Error + "The Product_Name must be less than 50 : ";
+            }
+
+            /*****************Prod_Description******************/
+
+
+            // If the Prod_Description is blank
+            if (Prod_Description.Length == 0)
+            {
+                //Record the error.
+                Error = Error + "The Prod_Description may not be blank :  ";
+
+            }
+
+            // If the Prod_Description is greater than 1000.
+            if (Prod_Description.Length > 1000)
+            {
+                //Record the error.
+                Error = Error + "The Prod_Description must be less than 1000 :  ";
+
+            }
+
+            /*****************Prod_Price******************/
+
+
+            // If the Prod_Price is blank
+            if (Prod_Price.Length == 0)
+            {
+                //Record the error.
+                Error = Error + "The Prod_Price may not be blank :  ";
+
+            }
+
+            // If the Prod_Description is greater than 53.
+            if (Prod_Price.Length > 53)
+            {
+                //Record the error.
+                Error = Error + "The Prod_Price must be less than 53 :  ";
+
+            }
+
+            if (!float.TryParse(Prod_Price, out _))
+            {
+                Error = Error + "Prod_Price must be a numeric value. ";
+            }
+
+
+            // If the Prod_Quantity is blank
+            if (Prod_Quantity.Length == 0)
+            {
+                //Record the error.
+                Error = Error + "The Prod_Quantity may not be blank :  ";
+
+            }
+
+            // If the Prod_Quantity is greater than 50.
+            if (Prod_Quantity.Length > 50)
+            {
+                //Record the error.
+                Error = Error + "The Prod_Quantity must be less than 53 :  ";
+
+            }
+
+            /*************************Date_Added**************************/
+
+
+            //create an instance of DateTime to compare with DateTemp
+            //in the if statement
+            // Check if the Date_Added is a valid date
+            DateTime DateTemp;
+            if (!DateTime.TryParse(Date_Added, out DateTemp))
+            {
+                Error = Error + "The date is not a valid date. ";
+                return Error; // Return immediately if the date is not valid
+            }
+
+            // Compare the DateTemp with the current date
+            DateTime DateComp = DateTime.Now.Date;
+            if (DateTemp < DateComp)
+            {
+                Error = Error + "The date cannot be in the past. ";
+            }
+            else if (DateTemp > DateComp.AddYears(100))
+            {
+                Error = Error + "The date cannot be 100 or more years in the future. ";
+            }
+
+
+            //Return any error message.
+
+            return "";
         }
     }
 }
