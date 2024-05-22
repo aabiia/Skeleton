@@ -21,7 +21,7 @@ public partial class _1Viewer : System.Web.UI.Page
         Response.Write(AnCustomer.Address);
         Response.Write(AnCustomer.CustomerId);
         Response.Write(AnCustomer.DateOfBirth);
-        Response.Write(AnCustomer.Active);
+        Response.Write(AnCustomer.IsActive);
     }
 
 
