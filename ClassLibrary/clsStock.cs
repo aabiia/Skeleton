@@ -43,7 +43,7 @@ namespace ClassLibrary
         //private data member for the Prod_Price property
         private Int32 mProd_Price;
         //Prod_Price public property
-        public int Prod_Price
+        public float Prod_Price
         {
             get
             {
@@ -53,7 +53,7 @@ namespace ClassLibrary
             set
             {
                 //this line of code allows data into the property
-                mProd_Price = value;
+                mProd_Price = (int)value;
             }
         }
 

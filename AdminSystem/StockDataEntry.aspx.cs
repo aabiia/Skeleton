@@ -19,8 +19,17 @@ public partial class _1_DataEntry : System.Web.UI.Page
         //Create a new Instance of clsStock.
         clsStock Product = new clsStock();
 
-        //Capture the Product_ID.
-        Product.Product_ID = Convert.ToInt32(txtProduct_ID.Text);
+        // Capture and validate the Product_ID.
+        int Product_ID;
+        if (int.TryParse(txtProduct_ID.Text, out Product_ID))
+        {
+            Product.Product_ID = Product_ID;
+        }
+        else
+        {
+            lblError.Text = "Invalid Product ID format.";
+            return;
+        }
 
         //Capture the Product_Name.
         string Product_Name = txtProduct_Name.Text;
