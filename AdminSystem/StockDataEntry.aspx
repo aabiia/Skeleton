@@ -11,13 +11,16 @@
         }
     </style>
 </head>
-<body>
+<body style="width: 403px; height: 419px">
 
     <form id="form1" runat="server">
 
  <p class="auto-style1">
-     <asp:Label ID="lblProduct_ID" runat="server" style="z-index: 1; left: 10px; top: 15px; position: absolute" Text="Product_ID" width="72px"></asp:Label>
-     <asp:TextBox ID="txtProduct_ID" runat="server" style="z-index: 1; left: 129px; top: 10px; position: absolute; height: 22px; width: 126px;" width="128px" Height="22px"></asp:TextBox>
+     <asp:Label ID="lblProduct_ID" runat="server" style="z-index: 1; left: 10px; top: 15px; position: absolute; right: 993px;" Text="Product_ID" width="72px"></asp:Label>
+     <asp:TextBox ID="txtProduct_ID" runat="server" style="z-index: 1; left: 127px; top: 12px; position: absolute; height: 22px; width: 126px;" width="128px" Height="22px"></asp:TextBox>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <asp:Button ID="btnFind" runat="server" Height="28px" OnClick="btnFind_Click" Text="Find" Width="64px" />
 
 </p>
 <p class="auto-style1">

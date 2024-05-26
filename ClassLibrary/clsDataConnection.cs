@@ -34,8 +34,8 @@ public class clsDataConnection
     private string GetConnectionString()
     {
         System.Net.WebClient client = new System.Net.WebClient();
-        string downloadString = client.DownloadString("http://localhost:5000/");
-        return downloadString;
+        string connectionString = "Data Source=v00egd00002l.lec-admin.dmu.ac.uk;User ID=p2750500;Password=teamskincare1001;Connect Timeout=30;Encrypt=True";
+        return connectionString;
     }
 
     public string GetDBName()

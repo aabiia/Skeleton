@@ -16,8 +16,6 @@ public partial class _1Viewer : System.Web.UI.Page
         //Get the data from the Session Object.
         Product = (clsStock)Session["Product"];
 
-
-        //Display Product_ID for this entry.
         Response.Write(Product.Product_ID);
 
         //Display Product_Name for this entry.
@@ -37,6 +35,6 @@ public partial class _1Viewer : System.Web.UI.Page
 
         //Display Supplier_ID for the entry.
         Response.Write(Product.Supplier_ID);
-        
+
     }
 }

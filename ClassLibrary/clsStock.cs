@@ -41,7 +41,7 @@ namespace ClassLibrary
 
 
         //private data member for the Prod_Price property
-        private Int32 mProd_Price;
+        private float mProd_Price;
         //Prod_Price public property
         public float Prod_Price
         {
@@ -53,7 +53,7 @@ namespace ClassLibrary
             set
             {
                 //this line of code allows data into the property
-                mProd_Price = (int)value;
+                mProd_Price = value;
             }
         }
 
@@ -130,18 +130,31 @@ namespace ClassLibrary
 
         public bool Find(int Product_ID)
         {
-            //Set the private data member to thr test data value.
-            mProduct_ID = 3;
-            mProduct_Name = "Test Name";
-            mProd_Description = "Test Description";
-            mProd_Price = 10;
-            mProd_Quantity = 12;
-            mDate_Added = Convert.ToDateTime("19/05/2024");
-            mSupplier_ID = 1;
+           clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@Product_ID", Product_ID);
+
+            DB.Execute("sproc_tblProduct_FilterByProduct_ID");
+
+            if(DB.Count == 1)
+            {
+                mProduct_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Product_ID"]);
+                mProduct_Name = Convert.ToString(DB.DataTable.Rows[0]["Product_Name"]);
+                mProd_Description = Convert.ToString(DB.DataTable.Rows[0]["Prod_Description"]);
+                mProd_Price = (int)Convert.ToSingle(DB.DataTable.Rows[0]["Prod_Price"]);
+                mProd_Quantity = Convert.ToInt32(DB.DataTable.Rows[0]["Prod_Quantity"]);
+                mDate_Added = Convert.ToDateTime(DB.DataTable.Rows[0]["Date_Added"]);
+                mSupplier_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Supplier_ID"]);
+
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
 
 
-            //Always return True.
-            return true;
         }
 
         public string Valid(string Product_Name, string Prod_Description, string Prod_Price, string Prod_Quantity, string Date_Added)

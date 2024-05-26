@@ -86,5 +86,35 @@ namespace Testing3
             Assert.AreEqual(AllProduct.Count, TestList.Count);
         }
 
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsProductCollection AllProduct = new clsProductCollection();
+
+            clsStock TestItem = new clsStock();
+
+            int PrimaryKey = 0;
+
+            TestItem.Product_ID = 1;
+            TestItem.Product_Name = "Skincare";
+            TestItem.Prod_Description = "Description";
+            TestItem.Prod_Price = 10;
+            TestItem.Prod_Quantity = 20;
+            TestItem.Date_Added = DateTime.Now;
+            TestItem.Supplier_ID = 1;
+
+            AllProduct.ThisProduct = TestItem;
+
+            PrimaryKey = AllProduct.Add();
+
+            TestItem.Product_ID = PrimaryKey;
+
+            AllProduct.ThisProduct.Find(PrimaryKey);
+
+            Assert.AreEqual(AllProduct.ThisProduct, TestItem);
+        }
+
+
     }
 }
