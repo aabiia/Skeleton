@@ -96,8 +96,14 @@ public partial class _1_DataEntry : System.Web.UI.Page
                 lblError.Text = "Invalid supplier ID format.";
                 return;
             }
+
+            clsProductCollection ProductList = new clsProductCollection();
+
+            ProductList.ThisProduct = Product;
+
+            ProductList.Add();
             // Store the Product in the SessionObject.
-            Session["Product"] = Product;
+            
             //Nevigate to the view page
             Response.Redirect("StockViewer.aspx");
 
@@ -112,4 +118,33 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
     }
 
+
+    protected void btnFind_Click(object sender, EventArgs e)
+    {
+        clsStock Product = new clsStock();
+
+        Int32 Product_ID;
+
+        Boolean Found = false;
+
+        Product_ID = Convert.ToInt32(txtProduct_ID.Text);
+
+        Found = Product.Find(Product_ID);
+
+        if(Found ==  true)
+        {
+            txtProduct_Name.Text = Product.Product_Name;
+            txtProd_Description.Text = Product.Prod_Description;
+            txtProd_Price.Text = Product.Prod_Price.ToString();
+            txtProd_Quantity.Text = Product.Prod_Quantity.ToString();
+            txtDate_Added.Text = Product.Date_Added.ToString();
+            txtSupplier_ID.Text = Product.Supplier_ID.ToString();
+
+
+        }
+
+
+
+
+    }
 }

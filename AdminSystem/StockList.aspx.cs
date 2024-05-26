@@ -34,4 +34,11 @@ public partial class _1_List : System.Web.UI.Page
 
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Session["Product_ID"] = -1;
+
+        Response.Redirect("StockDataEntry.aspx");
+    }
 }

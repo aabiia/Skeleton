@@ -9,7 +9,12 @@ namespace ClassLibrary
 
     {
 
+        // Private data member for the mProductList.
         List<clsStock> mProductList = new List<clsStock>();
+
+        //Private data member for the ThisProduct.
+        clsStock mThisProduct = new clsStock();
+
 
         public List<clsStock> ProductList
         {
@@ -40,7 +45,19 @@ namespace ClassLibrary
 
         }
 
-        public clsStock ThisProduct { get; set; }
+        public clsStock ThisProduct
+        {
+            get
+            {
+                return mThisProduct;
+            }
+
+            set
+            {
+                mThisProduct = value;
+            }
+
+        }
 
         public clsProductCollection()
         {
@@ -104,7 +121,21 @@ namespace ClassLibrary
             }
         }
 
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
 
+            DB.AddParameter("@Product_Name", mThisProduct.Product_Name);
+            DB.AddParameter("@Prod_Description", mThisProduct.Prod_Description);
+            DB.AddParameter("@Prod_Price", mThisProduct.Prod_Price);
+            DB.AddParameter("@Prod_Quantity", mThisProduct.Prod_Quantity);
+            DB.AddParameter("@Date_Added", mThisProduct.Date_Added);
+            DB.AddParameter("@Supplier_ID", mThisProduct.Supplier_ID);
+
+            return DB.Execute("sproc_tblProduct_Insert");
+
+
+        }
     }
 
 

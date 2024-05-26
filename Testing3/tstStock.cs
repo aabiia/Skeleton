@@ -174,8 +174,8 @@ namespace Testing3
             Int32 Product_ID = 3;
             //invoke the method
             Found = Product.Find(Product_ID);
-            //check the Product_Name property
-            if (Product.Product_Name != "Test Name")
+            //check the Prod_Description
+            if (Product.Product_Name != "Nivea")
             {
                 OK = false;
             }
@@ -197,7 +197,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Prod_Description
-            if (Product.Prod_Description != "Test Description")
+            if (Product.Prod_Description != "Renewing facial scrub")
             {
                 OK = false;
             }
@@ -219,7 +219,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Prod_Price
-            if (Product.Prod_Price != 10)
+            if (Product.Prod_Price != 20)
             {
                 OK = false;
             }
@@ -241,7 +241,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Prod_Quantity property
-            if (Product.Prod_Quantity != 12)
+            if (Product.Prod_Quantity != 75)
             {
                 OK = false;
             }
@@ -263,7 +263,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Date_Added property
-            if (Product.Date_Added != Convert.ToDateTime("19/05/2024"))
+            if (Product.Date_Added != Convert.ToDateTime("03/05/2024"))
             {
                 OK = false;
             }
@@ -285,7 +285,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Supplier_ID property
-            if (Product.Supplier_ID != 1)
+            if (Product.Supplier_ID != 3)
             {
                 OK = false;
             }
