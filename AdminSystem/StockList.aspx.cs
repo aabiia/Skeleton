@@ -17,21 +17,20 @@ public partial class _1_List : System.Web.UI.Page
 
         }
 
-        void DisplayProducts()
-        {
-            clsProductCollection Products = new clsProductCollection();
+    }
 
-            lstProductList.DataSource = Products.ProductList;
+    void DisplayProducts()
+    {
+        clsProductCollection Products = new clsProductCollection();
 
-            lstProductList.DataValueField = "Product_ID";
+        lstProductList.DataSource = Products.ProductList;
 
-            lstProductList.DataValueField = "Product_Name";
+        lstProductList.DataValueField = "Product_ID";
 
-            lstProductList.DataBind();
+        lstProductList.DataValueField = "Product_Name";
 
+        lstProductList.DataBind();
 
-
-        }
 
 
     }
