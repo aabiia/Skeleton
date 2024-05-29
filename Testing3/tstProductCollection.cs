@@ -156,34 +156,6 @@ namespace Testing3
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         [TestMethod]
         public void DeleteMethodOK()
         {
@@ -214,6 +186,60 @@ namespace Testing3
             Boolean Found = AllProduct.ThisProduct.Find(PrimaryKey);
 
             Assert.IsFalse( Found );
+        }
+
+
+
+
+        [TestMethod]
+        public void ReportByProductNameMethodOK()
+        {
+
+            clsProductCollection AllProducts = new clsProductCollection();
+
+            clsProductCollection FilteredProduct = new clsProductCollection();
+            FilteredProduct.ReportByProductName("");
+
+            Assert.AreEqual(AllProducts.Count, FilteredProduct.Count);
+
+
+        }
+
+        [TestMethod]
+        public void ReportByProductNameNoneFound()
+        {
+
+            clsProductCollection FilteredProduct = new clsProductCollection();
+            FilteredProduct.ReportByProductName("NXCND");
+
+            Assert.AreEqual(0, FilteredProduct.Count);
+        }
+
+
+        [TestMethod]
+
+        public void ReportByProductNameTestDataFound()
+        {
+            clsProductCollection FilteredProduct = new clsProductCollection();
+            Boolean OK = true;
+            FilteredProduct.ReportByProductName("Aloe Vera");
+
+            if (FilteredProduct.Count == 2)
+            {
+                if (FilteredProduct.ProductList[0].Product_ID != 25)
+                {
+                    OK = false;
+                }
+                if (FilteredProduct.ProductList[0].Product_ID != 26)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            Assert.IsFalse(OK);
         }
 
     }
