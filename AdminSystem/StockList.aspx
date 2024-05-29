@@ -6,13 +6,27 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="height: 423px">
     <form id="form1" runat="server">
-        <div>
+        <div style="height: 298px">
+        <asp:ListBox ID="lstProductList" runat="server" Height="415px" Width="322px"></asp:ListBox>
         </div>
-        <asp:ListBox ID="lstProductList" runat="server" Height="302px" Width="305px"></asp:ListBox>
-        <p>
-            <asp:Button ID="btnAdd" runat="server" OnClick="Button1_Click" Text="Add" />
+        <p style="height: 25px">
+            &nbsp;</p>
+        <p style="height: 25px">
+            &nbsp;</p>
+        <p style="height: 25px">
+            &nbsp;</p>
+        <p style="height: 25px">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" Height="25px" Width="51px" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" Text="Edit" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="Delete" />
+        </p>
+        <p style="height: 25px">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lblError" runat="server"></asp:Label>
         </p>
     </form>
 </body>

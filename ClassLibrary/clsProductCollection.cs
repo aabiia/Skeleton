@@ -136,6 +136,34 @@ namespace ClassLibrary
 
 
         }
+
+        public void Update()
+        {
+            
+           clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@Product_ID", mThisProduct.Product_ID);
+            DB.AddParameter("@Product_Name", mThisProduct.Product_Name);
+            DB.AddParameter("@Prod_Description", mThisProduct.Prod_Description);
+            DB.AddParameter("@Prod_Price", mThisProduct.Prod_Price);
+            DB.AddParameter("@Prod_Quantity", mThisProduct.Prod_Quantity);
+            DB.AddParameter("@Date_Added", mThisProduct.Date_Added);
+            DB.AddParameter("@Supplier_ID", mThisProduct.Supplier_ID);
+
+            DB.Execute("sproc_tblProduct_Update");
+
+
+        }
+
+
+        public void Delete()
+        {
+            clsDataConnection DB2 = new clsDataConnection();
+
+            DB2.AddParameter("@Product_ID", mThisProduct.Product_ID);
+
+            DB2.Execute("sproc_tblProduct_Delete");
+        }
     }
 
 

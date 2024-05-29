@@ -115,6 +115,106 @@ namespace Testing3
             Assert.AreEqual(AllProduct.ThisProduct, TestItem);
         }
 
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            clsProductCollection AllProduct = new clsProductCollection();
+
+            clsStock TestItem = new clsStock();
+
+            int PrimaryKey = 0;
+
+            TestItem.Product_Name = "Skincare";
+            TestItem.Prod_Description = "Description";
+            TestItem.Prod_Price = 10;
+            TestItem.Prod_Quantity = 20;
+            TestItem.Date_Added = DateTime.Now;
+            TestItem.Supplier_ID = 1;
+
+            AllProduct.ThisProduct = TestItem;
+
+            PrimaryKey = AllProduct.Add();
+
+            TestItem.Product_ID = PrimaryKey;
+
+            AllProduct.ThisProduct.Find(PrimaryKey);
+
+            TestItem.Product_Name = "Care Skin";
+            TestItem.Prod_Description = "Product info.";
+            TestItem.Prod_Price = 30;
+            TestItem.Prod_Quantity = 30;
+            TestItem.Date_Added = DateTime.Now;
+            TestItem.Supplier_ID = 2;
+
+            AllProduct.ThisProduct = TestItem;
+
+            AllProduct.Update();
+
+            AllProduct.ThisProduct.Find(PrimaryKey);
+
+            Assert.AreEqual(AllProduct.ThisProduct, TestItem);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsProductCollection AllProduct = new clsProductCollection();
+
+            clsStock TestItem = new clsStock();
+
+            int PrimaryKey = 0;
+
+            TestItem.Product_ID = 1;
+            TestItem.Product_Name = "Skincare";
+            TestItem.Prod_Description = "Description";
+            TestItem.Prod_Price = 10;
+            TestItem.Prod_Quantity = 20;
+            TestItem.Date_Added = DateTime.Now;
+            TestItem.Supplier_ID = 1;
+
+            AllProduct.ThisProduct = TestItem;
+
+            PrimaryKey = AllProduct.Add();
+
+            TestItem.Product_ID = PrimaryKey;
+
+            AllProduct.ThisProduct.Find(PrimaryKey);
+
+            AllProduct.Delete();
+
+            Boolean Found = AllProduct.ThisProduct.Find(PrimaryKey);
+
+            Assert.IsFalse( Found );
+        }
 
     }
 }

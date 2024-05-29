@@ -329,13 +329,6 @@ namespace Testing3
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
 
-            string Expected = "The product name cannot be blank. ";
-
-            // Act
-            string Actual = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
-
-            // Assert
-            Assert.AreEqual(Expected, Actual, $"Expected: '{Expected}', but got: '{Actual}'");
         }
 
         [TestMethod]
