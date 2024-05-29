@@ -12,70 +12,81 @@ public partial class _1_List : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        if (IsPostBack == false)
         {
-
             DisplayProducts();
-
         }
-
     }
 
     void DisplayProducts()
     {
-        clsProductCollection Products = new clsProductCollection();
-
-        lstProductList.DataSource = Products.ProductList;
-
+        clsProductCollection AllProducts = new clsProductCollection();
+        lstProductList.DataSource = AllProducts.ProductList;
         lstProductList.DataValueField = "Product_ID";
-
-        lstProductList.DataValueField = "Product_Name";
-
+        lstProductList.DataTextField = "Product_Name";
         lstProductList.DataBind();
-
-
-
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
         Session["Product_ID"] = -1;
-
         Response.Redirect("StockDataEntry.aspx");
     }
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         Int32 Product_ID;
-        if(lstProductList.SelectedIndex != -1)
+
+        if (lstProductList.SelectedIndex != -1)
         {
             Product_ID = Convert.ToInt32(lstProductList.SelectedValue);
-            Session["Produtc-ID"] = Product_ID;
-            Response.Redirect("StokDcataEntry.aspx");
+            Session["Product_ID"] = Product_ID;
+            Response.Redirect("StockDataEntry.aspx");
+
+
         }
         else
         {
-            lblError.Text = "Please select a record from the list to edit :";
+            lblError.Text = "Please select a Record Form the list to edit.";
         }
-
-
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-        Int32 Produtct_ID;
+        Int32 Product_ID;
+
         if (lstProductList.SelectedIndex != -1)
         {
-            Produtct_ID = Convert.ToInt32(lstProductList.SelectedValue);
-            Session["Produtc-ID"] = Produtct_ID;
-            Response.Redirect("StockonCfirmDelete.aspx");
+            Product_ID = Convert.ToInt32(lstProductList.SelectedValue);
+            Session["Product_ID"] = Product_ID;
+
+            Response.Redirect("StockConfirmDelete.aspx");
 
         }
         else
         {
-            lblError.Text = "Please select any record from the list  :";
+            lblError.Text = "Please select a product from the List to Delete.";
         }
+    }
 
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+        clsProductCollection Product = new clsProductCollection();
+        Product.ReportByProductName("txtProductName.Text");
+        lstProductList.DataSource = Product.ProductList;
+        lstProductList.DataValueField = "Product_ID";
+        lstProductList.DataTextField = "Product_Name";
+        lstProductList.DataBind();
+    }
 
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        clsProductCollection Product = new clsProductCollection();
+        Product.ReportByProductName("");
+        txtProductName.Text = "";
+        lstProductList.DataSource = Product.ProductList;
+        lstProductList.DataValueField = "Product_ID";
+        lstProductList.DataTextField = "Product_Name";
+        lstProductList.DataBind();
     }
 }
