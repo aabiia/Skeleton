@@ -196,10 +196,10 @@ namespace ClassLibrary
 
 
             // If the Prod_Price is blank
-            if (Prod_Price.Length == 0)
+            if (Prod_Price.Length <= 0)
             {
                 //Record the error.
-                Error = Error + "The Prod_Price may not be blank :  ";
+                Error = Error + "The Prod_Price may not be blank or Negative  ";
 
             }
 
@@ -229,7 +229,7 @@ namespace ClassLibrary
             if (Prod_Quantity.Length > 50)
             {
                 //Record the error.
-                Error = Error + "The Prod_Quantity must be less than 53 :  ";
+                Error = Error + "The Prod_Quantity must be less than 50 :  ";
 
             }
 
