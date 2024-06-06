@@ -661,7 +661,7 @@ namespace Testing3
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string Prod_Quantity = ""; //this should fail.
+            string Prod_Quantity = "-1"; //this should fail.
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
