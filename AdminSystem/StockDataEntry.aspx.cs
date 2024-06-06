@@ -21,6 +21,9 @@ public partial class _1_DataEntry : System.Web.UI.Page
             {
                 DisplayProduct();
             }
+            clsStockUser AnUser = new clsStockUser();
+            AnUser = (clsStockUser)Session["AnUser"];
+            Response.Write("Logged in by, " + AnUser.Username);
         }
 
     }
@@ -86,7 +89,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
     }
 
 
-    protected void btnFind_Click(object sender, EventArgs e)
+    protected void btnFind_Click1(object sender, EventArgs e)
     {
         clsStock Product = new clsStock();
 
@@ -115,10 +118,19 @@ public partial class _1_DataEntry : System.Web.UI.Page
         {
             // Display an error message if the product is not found
             lblError.Text = "Error: Product with the specified ID does not exist  :";
-           
+
         }
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StockList.aspx");
 
     }
 
+    protected void btnMenu_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TeamMainMenu.aspx");
 
+    }
 }
