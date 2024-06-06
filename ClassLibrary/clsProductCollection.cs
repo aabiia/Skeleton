@@ -73,7 +73,6 @@ namespace ClassLibrary
             while (Index < RecordCount)
             {
                 clsStock AProduct = new clsStock();
-
                 AProduct.Product_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Product_ID"]);
                 AProduct.Product_Name = Convert.ToString(DB.DataTable.Rows[Index]["Product_Name"]);
                 AProduct.Prod_Description = Convert.ToString(DB.DataTable.Rows[Index]["Prod_Description"]);
@@ -104,7 +103,6 @@ namespace ClassLibrary
         {
             
            clsDataConnection DB = new clsDataConnection();
-
             DB.AddParameter("@Product_ID", mThisProduct.Product_ID);
             DB.AddParameter("@Product_Name", mThisProduct.Product_Name);
             DB.AddParameter("@Prod_Description", mThisProduct.Prod_Description);
@@ -117,10 +115,10 @@ namespace ClassLibrary
 
         public void Delete()
         {
-            clsDataConnection DB2 = new clsDataConnection();
+            clsDataConnection DB = new clsDataConnection();
 
-            DB2.AddParameter("@Product_ID", mThisProduct.Product_ID);
-            DB2.Execute("sproc_tblProduct_Delete");
+            DB.AddParameter("@Product_ID", mThisProduct.Product_ID);
+            DB.Execute("sproc_tblProduct_Delete");
         }
 
         public void ReportByProductName(string Product_Name)

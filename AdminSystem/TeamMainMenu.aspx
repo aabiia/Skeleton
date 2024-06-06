@@ -8,8 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+        <br />
+        <asp:Button ID="btnStock" runat="server" OnClick="btnStock_Click" style="z-index: 1; left: 236px; top: 228px; position: absolute; height: 60px; width: 186px; right: 985px;" Text="Stock" Font-Bold="True" Font-Size="20pt" />
+        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 404px; top: 87px; position: absolute; height: 64px; width: 388px;" Text="Team Main Menu" BackColor="Yellow" Font-Bold="True" Font-Size="30pt" ForeColor="Black"></asp:Label>
     </form>
 </body>
 </html>

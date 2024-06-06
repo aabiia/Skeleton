@@ -83,7 +83,7 @@ namespace Testing3
 
             AllProduct.ProductList = TestList;
 
-            Assert.AreEqual(AllProduct.Count, TestList.Count);
+            Assert.AreEqual(AllProduct.Count,TestList.Count);
         }
 
 

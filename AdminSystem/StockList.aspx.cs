@@ -16,6 +16,9 @@ public partial class _1_List : System.Web.UI.Page
         {
             DisplayProducts();
         }
+        clsStockUser AnUser = new clsStockUser();
+        AnUser = (clsStockUser)Session["AnUser"];
+        Response.Write("Logged in by, " + AnUser.Username);
     }
 
     void DisplayProducts()
@@ -72,7 +75,7 @@ public partial class _1_List : System.Web.UI.Page
     protected void btnApply_Click(object sender, EventArgs e)
     {
         clsProductCollection Product = new clsProductCollection();
-        Product.ReportByProductName("txtProductName.Text");
+        Product.ReportByProductName("txtProduct_Name.Text");
         lstProductList.DataSource = Product.ProductList;
         lstProductList.DataValueField = "Product_ID";
         lstProductList.DataTextField = "Product_Name";
@@ -83,10 +86,15 @@ public partial class _1_List : System.Web.UI.Page
     {
         clsProductCollection Product = new clsProductCollection();
         Product.ReportByProductName("");
-        txtProductName.Text = "";
+        txtProduct_Name.Text = "";
         lstProductList.DataSource = Product.ProductList;
         lstProductList.DataValueField = "Product_ID";
         lstProductList.DataTextField = "Product_Name";
         lstProductList.DataBind();
+    }
+
+    protected void BtnMebu_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("TeamMainMenu.aspx");
     }
 }
