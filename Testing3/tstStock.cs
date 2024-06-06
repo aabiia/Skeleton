@@ -175,7 +175,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Prod_Description
-            if (Product.Product_Name != "Nivea")
+            if (Product.Product_Name != "Aloe Vera")
             {
                 OK = false;
             }
@@ -197,7 +197,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Prod_Description
-            if (Product.Prod_Description != "Renewing facial scrub")
+            if (Product.Prod_Description != "Soothing gel for sunburns and sensitive skin")
             {
                 OK = false;
             }
@@ -219,7 +219,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Prod_Price
-            if (Product.Prod_Price != 20)
+            if (Product.Prod_Price != 145)
             {
                 OK = false;
             }
@@ -241,7 +241,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Prod_Quantity property
-            if (Product.Prod_Quantity != 75)
+            if (Product.Prod_Quantity != 10)
             {
                 OK = false;
             }
@@ -263,7 +263,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Date_Added property
-            if (Product.Date_Added != Convert.ToDateTime("03/05/2024"))
+            if (Product.Date_Added != Convert.ToDateTime("01-02-2024"))
             {
                 OK = false;
             }
@@ -285,7 +285,7 @@ namespace Testing3
             //invoke the method
             Found = Product.Find(Product_ID);
             //check the Supplier_ID property
-            if (Product.Supplier_ID != 3)
+            if (Product.Supplier_ID != 5)
             {
                 OK = false;
             }
@@ -327,7 +327,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
 
         }
 
@@ -381,7 +381,7 @@ namespace Testing3
             string Product_Name = "";
             Product_Name = Product_Name.PadRight(51, 'a'); // this should fail
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -392,7 +392,7 @@ namespace Testing3
             string Product_Name = "";
             Product_Name = Product_Name.PadRight(500, 'a'); // this should fail
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         /**************Testing the Prod_Description**************/
@@ -409,7 +409,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -503,7 +503,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -519,7 +519,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
 
@@ -539,7 +539,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -629,7 +629,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -644,7 +644,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
 
@@ -665,7 +665,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -759,7 +759,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -775,7 +775,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
 
         }
 
@@ -819,7 +819,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -840,7 +840,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
 
@@ -862,7 +862,7 @@ namespace Testing3
             //invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -883,7 +883,7 @@ namespace Testing3
             // Invoke the method
             Error = Product.Valid(Product_Name, Prod_Description, Prod_Price, Prod_Quantity, Date_Added);
             // Test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
 

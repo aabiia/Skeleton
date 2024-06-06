@@ -13,14 +13,14 @@ namespace Testing3
         [TestMethod]
         public void InstanceOK()
         {
-            clsProductCollection AllProduct = new clsProductCollection();
+            clsStockCollection AllProduct = new clsStockCollection();
             Assert.IsNotNull(AllProduct);
         }
 
         [TestMethod]
         public void ProdutListOK()
         {
-            clsProductCollection AllProduct = new clsProductCollection();
+            clsStockCollection AllProduct = new clsStockCollection();
 
             List<clsStock> TestList = new List<clsStock>();
 
@@ -45,7 +45,7 @@ namespace Testing3
         [TestMethod]
         public void ThisProductPropertyOK()
         {
-            clsProductCollection AllProduct = new clsProductCollection();
+            clsStockCollection AllProduct = new clsStockCollection();
 
             clsStock TestProduct = new clsStock();
 
@@ -65,7 +65,7 @@ namespace Testing3
         [TestMethod]
         public void ListAndCountOK()
         {
-            clsProductCollection AllProduct = new clsProductCollection();
+            clsStockCollection AllProduct = new clsStockCollection();
 
             List<clsStock> TestList = new List<clsStock>();
 
@@ -90,7 +90,7 @@ namespace Testing3
         [TestMethod]
         public void AddMethodOK()
         {
-            clsProductCollection AllProduct = new clsProductCollection();
+            clsStockCollection AllProduct = new clsStockCollection();
 
             clsStock TestItem = new clsStock();
 
@@ -118,7 +118,7 @@ namespace Testing3
         [TestMethod]
         public void UpdateMethodOK()
         {
-            clsProductCollection AllProduct = new clsProductCollection();
+            clsStockCollection AllProduct = new clsStockCollection();
 
             clsStock TestItem = new clsStock();
 
@@ -159,7 +159,7 @@ namespace Testing3
         [TestMethod]
         public void DeleteMethodOK()
         {
-            clsProductCollection AllProduct = new clsProductCollection();
+            clsStockCollection AllProduct = new clsStockCollection();
 
             clsStock TestItem = new clsStock();
 
@@ -195,9 +195,9 @@ namespace Testing3
         public void ReportByProductNameMethodOK()
         {
 
-            clsProductCollection AllProducts = new clsProductCollection();
+            clsStockCollection AllProducts = new clsStockCollection();
 
-            clsProductCollection FilteredProduct = new clsProductCollection();
+            clsStockCollection FilteredProduct = new clsStockCollection();
             FilteredProduct.ReportByProductName("");
 
             Assert.AreEqual(AllProducts.Count, FilteredProduct.Count);
@@ -209,7 +209,7 @@ namespace Testing3
         public void ReportByProductNameNoneFound()
         {
 
-            clsProductCollection FilteredProduct = new clsProductCollection();
+            clsStockCollection FilteredProduct = new clsStockCollection();
             FilteredProduct.ReportByProductName("NXCND");
 
             Assert.AreEqual(0, FilteredProduct.Count);
@@ -220,7 +220,7 @@ namespace Testing3
 
         public void ReportByProductNameTestDataFound()
         {
-            clsProductCollection FilteredProduct = new clsProductCollection();
+            clsStockCollection FilteredProduct = new clsStockCollection();
             Boolean OK = true;
             FilteredProduct.ReportByProductName("Aloe Vera");
 

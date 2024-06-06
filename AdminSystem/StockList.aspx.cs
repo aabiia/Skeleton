@@ -23,7 +23,7 @@ public partial class _1_List : System.Web.UI.Page
 
     void DisplayProducts()
     {
-        clsProductCollection AllProducts = new clsProductCollection();
+        clsStockCollection AllProducts = new clsStockCollection();
         lstProductList.DataSource = AllProducts.ProductList;
         lstProductList.DataValueField = "Product_ID";
         lstProductList.DataTextField = "Product_Name";
@@ -74,17 +74,17 @@ public partial class _1_List : System.Web.UI.Page
 
     protected void btnApply_Click(object sender, EventArgs e)
     {
-        clsProductCollection Product = new clsProductCollection();
+        clsStockCollection Product = new clsStockCollection();
         Product.ReportByProductName("txtProduct_Name.Text");
         lstProductList.DataSource = Product.ProductList;
         lstProductList.DataValueField = "Product_ID";
-        lstProductList.DataTextField = "Product_Name";
+        lstProductList.DataTextField= "Product_Name";
         lstProductList.DataBind();
     }
 
     protected void btnClear_Click(object sender, EventArgs e)
     {
-        clsProductCollection Product = new clsProductCollection();
+        clsStockCollection Product = new clsStockCollection();
         Product.ReportByProductName("");
         txtProduct_Name.Text = "";
         lstProductList.DataSource = Product.ProductList;

@@ -30,7 +30,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
     void DisplayProduct()
     {
-        clsProductCollection Product = new clsProductCollection();
+        clsStockCollection Product = new clsStockCollection();
         Product.ThisProduct.Find(Product_ID);
 
         txtProduct_ID.Text = Product.ThisProduct.Product_ID.ToString();
@@ -64,7 +64,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             Product.Date_Added = Convert.ToDateTime(Date_Added);
             Product.Supplier_ID = Convert.ToInt32(Supplier_ID);
 
-            clsProductCollection ProductList = new clsProductCollection();
+            clsStockCollection ProductList = new clsStockCollection();
 
             if (Product_ID == -1)
             {
