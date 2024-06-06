@@ -5,7 +5,7 @@ using System.Data;
 
 namespace ClassLibrary
 {
-    public class clsProductCollection
+    public class clsStockCollection
 
     {
 
@@ -56,22 +56,27 @@ namespace ClassLibrary
             }
         }
 
-        public clsProductCollection()
+
+        public clsStockCollection()
         {
+
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblProduct_SelectAll");
+
             PopulateArray(DB);
         }
-
 
         void PopulateArray(clsDataConnection DB)
         {
             Int32 Index = 0;
-            Int32 RecordCount ;
+            Int32 RecordCount;
             RecordCount = DB.Count;
             mProductList = new List<clsStock>();
+
+
             while (Index < RecordCount)
             {
+
                 clsStock AProduct = new clsStock();
                 AProduct.Product_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Product_ID"]);
                 AProduct.Product_Name = Convert.ToString(DB.DataTable.Rows[Index]["Product_Name"]);
@@ -85,6 +90,7 @@ namespace ClassLibrary
                 Index++;
             }
         }
+
 
         public int Add()
         {
