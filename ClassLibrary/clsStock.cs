@@ -166,11 +166,11 @@ namespace ClassLibrary
             // Validate Product_Name
             if (Product_Name.Length == 0)
             {
-                Error = Error + "The Product_Name may not be blank : ";
+                Error += "The Product_Name may not be blank : ";
             }
             if (Product_Name.Length > 50)
             {
-                Error = Error + "The Product_Name must be less than 50 : ";
+                Error += "The Product_Name must be less than 50 : ";
             }
 
             /*****************Prod_Description******************/
@@ -180,7 +180,7 @@ namespace ClassLibrary
             if (Prod_Description.Length == 0)
             {
                 //Record the error.
-                Error = Error + "The Prod_Description may not be blank :  ";
+                Error += "The Prod_Description may not be blank :  ";
 
             }
 
@@ -188,7 +188,7 @@ namespace ClassLibrary
             if (Prod_Description.Length > 1000)
             {
                 //Record the error.
-                Error = Error + "The Prod_Description must be less than 1000 :  ";
+                Error += "The Prod_Description must be less than 1000 :  ";
 
             }
 
@@ -199,7 +199,7 @@ namespace ClassLibrary
             if (Prod_Price.Length <= 0)
             {
                 //Record the error.
-                Error = Error + "The Prod_Price may not be blank or Negative  ";
+                Error += "The Prod_Price may not be blank or Negative  ";
 
             }
 
@@ -207,13 +207,13 @@ namespace ClassLibrary
             if (Prod_Price.Length > 53)
             {
                 //Record the error.
-                Error = Error + "The Prod_Price must be less than 53 :  ";
+                Error += "The Prod_Price must be less than 53 :  ";
 
             }
 
             if (!float.TryParse(Prod_Price, out _))
             {
-                Error = Error + "Prod_Price must be a numeric value. ";
+                Error += "Prod_Price must be a numeric value. ";
             }
 
 
@@ -221,7 +221,7 @@ namespace ClassLibrary
             if (Prod_Quantity.Length == 0)
             {
                 //Record the error.
-                Error = Error + "The Prod_Quantity may not be blank :  ";
+                Error += "The Prod_Quantity may not be blank :  ";
 
             }
 
@@ -229,7 +229,7 @@ namespace ClassLibrary
             if (Prod_Quantity.Length > 50)
             {
                 //Record the error.
-                Error = Error + "The Prod_Quantity must be less than 50 :  ";
+                Error += "The Prod_Quantity must be less than 50 :  ";
 
             }
 
@@ -242,7 +242,7 @@ namespace ClassLibrary
             DateTime DateTemp;
             if (!DateTime.TryParse(Date_Added, out DateTemp))
             {
-                Error = Error + "The date is not a valid date. ";
+                Error += "The date is not a valid date. ";
                 return Error; // Return immediately if the date is not valid
             }
 
@@ -250,11 +250,11 @@ namespace ClassLibrary
             DateTime DateComp = DateTime.Now.Date;
             if (DateTemp < DateComp)
             {
-                Error = Error + "The date cannot be in the past. ";
+                Error += "The date cannot be in the past. ";
             }
             else if (DateTemp > DateComp.AddYears(100))
             {
-                Error = Error + "The date cannot be 100 or more years in the future. ";
+                Error +=  "The date cannot be 100 or more years in the future. ";
             }
 
 
