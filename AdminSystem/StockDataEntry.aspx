@@ -40,9 +40,10 @@
      <asp:TextBox ID="txtSupplier_ID" runat="server" style="z-index: 1; left: 141px; top: 275px; position: absolute" width="126px" height="22px"></asp:TextBox>
 
      <asp:Label ID="lblProd_Description" runat="server" style="z-index: 1; left: 12px; top: 117px; position: absolute; width: 72px; bottom: 431px;" Text="Prod_Description" height="19px"></asp:Label>
-     <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click1" style="z-index: 1; left: 320px; top: 40px; position: absolute" Text="Find" />
 
  <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 412px; top: 23px; position:absolute; height: 19px; text-align: center; color: #FF3300; margin-bottom: 0px;" width="72px"></asp:Label>
+
+     <asp:Button ID="btnFind" runat="server" style="z-index: 1; left: 290px; top: 15px; position: absolute" Text="Button" />
 
 </p>
  <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 51px; top: 383px; position: absolute" Text="OK" width="60px" />
